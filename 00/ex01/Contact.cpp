@@ -10,12 +10,6 @@ Contact::~Contact(void){
 	return;
 }
 
-Contact::Contact(std::string name){
-	first_name = name;
-	std::cout << "Default contact name is " << first_name << std::endl;
-	return;
-}
-
 std::string	Contact::getFirstName(void) const{
 	return first_name;
 }
@@ -34,12 +28,21 @@ void	Contact::setLastName(std::string name){
 	return;
 }
 
-std::string	Contact::getAddress(void) const{
-	return address;
+std::string	Contact::getNickname(void) const{
+	return nickname;
 }
 
-void	Contact::setAddress(std::string str){
-	address = str;
+void	Contact::setNickname(std::string name){
+	nickname = name;
+	return;
+}
+
+std::string	Contact::getNumber(void) const{
+	return phone_number;
+}
+
+void	Contact::setNumber(std::string str){
+	phone_number = str;
 	return;
 }
 
