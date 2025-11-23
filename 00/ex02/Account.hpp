@@ -55,7 +55,6 @@ private:
 	int				_nbWithdrawals;
 
 	Account( void );
-
 };
 
 
