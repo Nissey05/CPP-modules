@@ -1,3 +1,4 @@
+#pragma once
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP 
 
@@ -15,7 +16,6 @@ class Phonebook {
 		void addContact(void);
 		void printContact(void) const;
 		void moveContacts(void);
-		void test(void);
 		void search(void) const;
 		int get_index(void) const;
 };

@@ -5,7 +5,6 @@ int main(void)
 {
 	Phonebook	pb;
 	
-	pb.test();
 	while (1)
 	{
 		std::string str;

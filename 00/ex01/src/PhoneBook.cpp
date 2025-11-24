@@ -137,16 +137,3 @@ void Phonebook::search(void) const
 		return ;
 	print_contact_info(contacts[index]);
 }
-
-void Phonebook::test(void)
-{
-	for (int i = 0; i < 8; i++)
-	{
-		contacts[i].setFirstName(std::to_string(i));
-		contacts[i].setLastName(std::to_string(i));
-		contacts[i].setNickname(std::to_string(i));
-		contacts[i].setNumber(std::to_string(i));
-		contacts[i].setSecret(std::to_string(i));
-	}
-	contact_count = 7;
-}

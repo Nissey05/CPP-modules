@@ -1,6 +1,6 @@
-NAME = phonebook
+NAME = zombie
 
-SRC_FILES = PhoneBook.cpp Contact.cpp main.cpp
+SRC_FILES = Zombie.cpp main.cpp zombieHorde.cpp
 
 SRC_DIR = src
 OBJ_DIR = obj

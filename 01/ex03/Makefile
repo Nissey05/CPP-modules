@@ -1,6 +1,6 @@
-NAME = phonebook
+NAME = human
 
-SRC_FILES = PhoneBook.cpp Contact.cpp main.cpp
+SRC_FILES = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 SRC_DIR = src
 OBJ_DIR = obj

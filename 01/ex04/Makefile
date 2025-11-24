@@ -1,6 +1,6 @@
-NAME = phonebook
+NAME = replace
 
-SRC_FILES = PhoneBook.cpp Contact.cpp main.cpp
+SRC_FILES = main.cpp
 
 SRC_DIR = src
 OBJ_DIR = obj
