@@ -1,30 +1,21 @@
 NAME = replace
 
-SRC_FILES = main.cpp
-
-SRC_DIR = src
-OBJ_DIR = obj
-
-OBJ = $(SRC_FILES:.cpp=.o)
-OBJ := $(OBJ:%=$(OBJ_DIR)/%)
+SRC = main.cpp
+OBJ = $(SRC:%.cpp=%.o)
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -MMD -MP
-INC = -I inc/
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) $(CFLAGS) $(INC) -o $(NAME)
+	$(CC) $(OBJ) $(CFLAGS) -o $(NAME)
 
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
-
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
-	$(CC) -c $(CFLAGS) $(INC) $< -o $@
+%.o: %.cpp
+	$(CC) -c $(CFLAGS) $< -o $@
 
 clean:
-	rm -rf $(OBJ_DIR)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
@@ -32,4 +23,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
--include $(OBJ:.o=.d)
