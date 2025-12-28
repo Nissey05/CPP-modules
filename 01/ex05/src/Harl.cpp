@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 11:29:32 by nhendrik          #+#    #+#             */
-/*   Updated: 2025/12/23 14:44:14 by nhendrik         ###   ########.fr       */
+/*   Updated: 2025/12/28 21:27:28 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ void Harl::warning(void) {
 	std::cout << "Harl is breaking soon..." << std::endl;
 }
 void Harl::error(void) {
-	std::cout << "error: expected ';' after expression" << std::endl;
+	std::cout << "Error: expected ';' after expression" << std::endl;
 }
 
 void Harl::complain(std::string level) {
-	void (Harl::*funcs[5])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error, NULL};
+	void (Harl::*funcs[5])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error, nullptr};
 	std::string levels[5] = {"DEBUG", "INFO", "WARNING", "ERROR", nullptr};
 	int i = 0;
 	while (i < 4 && levels[i] != level)

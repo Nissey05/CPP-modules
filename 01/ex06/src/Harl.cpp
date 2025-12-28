@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 11:29:32 by nhendrik          #+#    #+#             */
-/*   Updated: 2025/12/23 14:50:19 by nhendrik         ###   ########.fr       */
+/*   Updated: 2025/12/28 21:26:06 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void Harl::warning(void) {
 	std::cout << "Harl is breaking soon..." << std::endl;
 }
 void Harl::error(void) {
-	std::cout << "error: expected ';' after expression" << std::endl;
+	std::cout << "Error: expected ';' after expression" << std::endl;
 }
 
 int get_level(std::string level)
@@ -39,12 +39,24 @@ int get_level(std::string level)
 }
 
 void Harl::complain(std::string level) {
-	void (Harl::*funcs[5])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error, NULL};
-	int i = 0;
+	void (Harl::*funcs[5])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error, nullptr};
 	int levels = get_level(level);
 	switch (levels)
 	{
-		case (0)
+		case 0:
+			(this->*funcs[0])();
+        	[[fallthrough]];
+		case 1:
+			(this->*funcs[1])();
+       		[[fallthrough]];
+		case 2:
+			(this->*funcs[2])();
+        	[[fallthrough]];
+		case 3:
+			(this->*funcs[3])();
+			break;
+		default:
+			std::cout << "Probably complaining about Pineapple on Pizza." << std::endl;
+			break;
 	}
-	(this->*funcs[levels])();
 }
