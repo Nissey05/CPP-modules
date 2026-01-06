@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/23 18:49:42 by nhendrik          #+#    #+#             */
-/*   Updated: 2025/11/23 19:52:21 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/01/06 17:43:51 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class HumanB {
 		HumanB(std::string name);
 		~HumanB(void);
 		void attack(void);
+		void setWeapon(Weapon *weapon);
 		void setWeapon(Weapon &weapon);
 };
 
