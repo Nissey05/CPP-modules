@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 19:55:23 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/08 23:04:07 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/01/12 16:48:12 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int main( void ) {
 	std::cout << "-------------------------------My tests----------------------------" << std::endl;
 	Fixed c(5);
 	Fixed d(7);
+	std::cout << c + d << std::endl;
+	std::cout << c - d << std::endl;
 	std::cout << Fixed::max(c, d) << std::endl;
 	std::cout << --d << std::endl;
 	std::cout << Fixed::max(++c, d--) << std::endl;

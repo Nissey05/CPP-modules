@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 11:28:04 by nhendrik          #+#    #+#             */
-/*   Updated: 2025/12/23 14:49:23 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/01/12 16:32:42 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,6 @@ class Harl {
 		void info(void);
 		void warning(void);
 		void error(void);
-		enum m_levels {
-			DEBUG,
-			INFO,
-			WARNING,
-			ERROR
-		} e_levels;
 	public:
 		void complain(std::string level);
 };

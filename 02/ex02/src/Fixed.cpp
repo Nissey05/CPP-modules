@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 11:29:32 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/08 23:02:10 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/01/12 16:47:20 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,50 +66,36 @@ int Fixed::toInt(void) const {
 }
 
 bool Fixed::operator>(const Fixed& other) const {
-	if (value > other.value)
-		return (true);
-	return (false);
+	return (value > other.value ? true : false);
 }
 
 bool Fixed::operator<(const Fixed& other) const {
-	if (value < other.value)
-		return (true);
-	return (false);
-	
+	return (value < other.value ? true : false);
 }
 
 bool Fixed::operator>=(const Fixed& other) const {
-	if (value >= other.value)
-		return (true);
-	return (false);
+	return (value >= other.value ? true : false);
 	
 }
 
 bool Fixed::operator<=(const Fixed& other) const {
-	if (value <= other.value)
-		return (true);
-	return (false);
-	
+	return (value <= other.value ? true : false);
 }
 
 bool Fixed::operator==(const Fixed& other) const {
-	if (value == other.value)
-		return (true);
-	return (false);
+	return (value == other.value ? true : false);
 }
 
 Fixed Fixed::operator+(const Fixed& other) const {
-	return (value + other.value);
+	return (toFloat() + other.toFloat());
 }
 
 Fixed Fixed::operator-(const Fixed& other) const {
-	return (value - other.value);
+	return (toFloat() - other.toFloat());
 }
 
 Fixed Fixed::operator*(const Fixed& other) const {
-	float x  = this->toFloat();
-	float y = other.toFloat();
-	return (x * y);
+	return (this->toFloat() * other.toFloat());
 }
 
 Fixed Fixed::operator/(const Fixed& other) const {
@@ -139,27 +125,19 @@ Fixed Fixed::operator--(int) {
 }
 
 Fixed& Fixed::min(Fixed& a, Fixed& b) {
-	if (a < b)
-		return (a);
-	return (b);
+	return (a < b ? a : b);
 }
 
 const Fixed& Fixed::min(const Fixed& a, const Fixed& b) {
-	if (a < b)
-		return (a);
-	return (b);
+	return (a < b ? a : b);
 }
 
 Fixed& Fixed::max(Fixed& a, Fixed& b) {
-	if (a < b)
-		return (b);
-	return (a);
+	return (a < b ? b : a);
 }
 
 const Fixed& Fixed::max(const Fixed& a, const Fixed& b) {
-	if (a < b)
-		return (b);
-	return (a);
+	return (a < b ? b : a);
 }
 
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed)

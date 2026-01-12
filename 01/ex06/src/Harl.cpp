@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 11:29:32 by nhendrik          #+#    #+#             */
-/*   Updated: 2025/12/28 21:26:06 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/01/12 16:32:14 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,10 @@ void Harl::complain(std::string level) {
 	{
 		case 0:
 			(this->*funcs[0])();
-        	[[fallthrough]];
 		case 1:
 			(this->*funcs[1])();
-       		[[fallthrough]];
 		case 2:
 			(this->*funcs[2])();
-        	[[fallthrough]];
 		case 3:
 			(this->*funcs[3])();
 			break;
