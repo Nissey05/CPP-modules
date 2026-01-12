@@ -1,6 +1,6 @@
-NAME = 
+NAME = ClapTrap
 
-SRC_FILES = 
+SRC_FILES = ClapTrap.cpp main.cpp
 
 SRC_DIR = src
 OBJ_DIR = obj
