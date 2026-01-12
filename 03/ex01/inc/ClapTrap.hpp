@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 18:05:47 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/12 18:11:02 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/01/13 00:16:45 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,15 @@
 class ClapTrap {
 	protected:
 		std::string name;
-		unsigned int hit_points;
-		unsigned int energy_points;
-		unsigned int attack_points;
+		unsigned int hit_points = 10;
+		unsigned int energy_points = 10;
+		unsigned int attack_points = 0;
 	public:
 		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap& copy);
-		~ClapTrap();
+
+		virtual ~ClapTrap();
 
 		ClapTrap& operator=(const ClapTrap& copy);
 
