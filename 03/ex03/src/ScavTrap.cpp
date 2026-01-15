@@ -6,11 +6,11 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 00:15:07 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/15 12:34:16 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/01/15 13:12:18 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "../inc/ScavTrap.hpp"
 
 
 ScavTrap::ScavTrap() {
@@ -30,7 +30,8 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 }
 
 ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap(copy) {
-	std::cout << "ScavTrap copy constructor called" << std::endl;}
+	std::cout << "ScavTrap copy constructor called" << std::endl;
+}
 
 ScavTrap::~ScavTrap() {
 	std::cout << "ScavTrap default destructor called" << std::endl;

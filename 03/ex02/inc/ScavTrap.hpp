@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 00:01:27 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/15 12:31:23 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/01/15 12:31:43 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include "ClapTrap.hpp"
 
 class ScavTrap: public ClapTrap {
+	private:
+		bool guarding = false;
 	public:
 		ScavTrap();
 		ScavTrap(std::string name);
