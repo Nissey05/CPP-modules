@@ -1,4 +1,4 @@
-NAME = ClapTrap
+NAME = DiamondTrap
 
 SRC_FILES = ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 

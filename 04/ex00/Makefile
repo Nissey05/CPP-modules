@@ -1,6 +1,6 @@
-NAME = FragTrap
+NAME = animal
 
-SRC_FILES = ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp
+SRC_FILES = Animal.cpp Dog.cpp Cat.cpp main.cpp
 
 SRC_DIR = src
 OBJ_DIR = obj
