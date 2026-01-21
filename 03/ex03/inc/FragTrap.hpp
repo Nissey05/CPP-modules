@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 12:26:35 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/15 13:32:16 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/01/19 15:55:58 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class FragTrap: virtual public ClapTrap {
 
 		FragTrap& operator=(const FragTrap& copy);
 
-		void attack(const std::string& target);
 		void highFivesGuys(void);
 };
 

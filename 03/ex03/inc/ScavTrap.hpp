@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 00:01:27 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/15 13:32:26 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/01/19 15:53:11 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class ScavTrap: virtual public ClapTrap {
 
 		ScavTrap& operator=(const ScavTrap& copy);
 
-		virtual void attack(const std::string& target);
+		void attack(const std::string& target);
 		void guardGate(void);
 };
 

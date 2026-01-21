@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 12:52:02 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/15 13:14:15 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/01/19 16:03:11 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,19 @@ DiamondTrap::DiamondTrap() {
 	std::cout << "DiamondTrap default constructor called" << std::endl;
 	name = "DiamondTrap";
 	ClapTrap::name = "DiamondTrap_clap_name";
-	hit_points = 100;
+	hit_points = FragTrap::hit_points;
 	energy_points = 50;
-	attack_points = 20;
+	attack_points = 30;
 }
 
 DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name){
 	std::cout << "DiamondTrap name constructor called" << std::endl;
 	this->name = name;
 	ClapTrap::name.append("_clap_name");
-	hit_points = 100;
+	hit_points = FragTrap::hit_points;
 	energy_points = 50;
-	attack_points = 20;
+	attack_points = 30;
+	std::cout << hit_points << " " << energy_points << " " << attack_points << std::endl;
 }
 
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap& copy) {

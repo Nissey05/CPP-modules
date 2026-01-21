@@ -11,4 +11,5 @@ int main(void)
 	DiamondTrap dia("Dia");
 	dia.highFivesGuys();
 	dia.whoAmI();
+	dia.attack("Piet");
 }
