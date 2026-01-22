@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/21 20:19:23 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/22 14:19:05 by nhendrik         ###   ########.fr       */
+/*   Created: 2026/01/21 20:19:19 by nhendrik          #+#    #+#             */
+/*   Updated: 2026/01/22 14:40:42 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #pragma once
 #include <iostream>
-#include "WrongAnimal.hpp"
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class WrongCat: public WrongAnimal {
+class Dog: public Animal {
+	private:
+		Brain *brain;
 	public:
-		WrongCat();
-		WrongCat(std::string type);
-		WrongCat(const WrongCat& copy);
+		Dog();
+		Dog(std::string tpe);
+		Dog(const Dog& copy);
 
-		virtual ~WrongCat();
-		void makeSound();
+		virtual ~Dog();
+		virtual void makeSound();
 
-		WrongCat& operator=(const WrongCat& copy);
+		Dog& operator=(const Dog& copy);
 };
