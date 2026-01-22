@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 20:18:25 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/22 14:46:26 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/01/22 16:09:50 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,17 @@ void Dog::makeSound(void) {
 
 	for (int c = bark(gen); c > 0; c--)
 		std::cout << "Woof!" << std::endl;
+}
+
+void Dog::setIdea(int i, std::string idea)
+{
+	if (i < 100)
+		brain->setIdea(i, idea);
+}
+
+std::string Dog::getIdea(int i)
+{
+	if (i < 100)
+		return (brain->getIdea(i));
+	return ("No thoughts here");
 }

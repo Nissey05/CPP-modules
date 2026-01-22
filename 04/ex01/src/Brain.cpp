@@ -37,3 +37,10 @@ void Brain::setIdea(int i, std::string idea)
 		return ;
 	this->ideas[i] = idea;
 }
+
+std::string Brain::getIdea(int i)
+{
+	if (i < 100)
+		return (ideas[i]);
+	return ("No thoughts here");
+}

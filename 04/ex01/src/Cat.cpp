@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 20:19:50 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/22 14:46:24 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/01/22 16:09:20 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,17 @@ void Cat::makeSound(void) {
 		i--;
 	}
 	std::cout << std::endl;
+}
+
+void Cat::setIdea(int i, std::string idea)
+{
+	if (i < 100)
+		brain->setIdea(i, idea);
+}
+
+std::string Cat::getIdea(int i)
+{
+	if (i < 100)
+		return (brain->getIdea(i));
+	return ("No thoughts here");
 }
