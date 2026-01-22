@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/21 20:17:03 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/22 13:27:36 by nhendrik         ###   ########.fr       */
+/*   Created: 2026/01/22 13:26:45 by nhendrik          #+#    #+#             */
+/*   Updated: 2026/01/22 13:28:38 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #pragma once
 #include <iostream>
 
-class Animal {
+class WrongAnimal {
 	protected:
 		std::string type;
 	public:
-		Animal();
-		Animal(std::string type);
-		Animal(const Animal& copy);
+		WrongAnimal();
+		WrongAnimal(std::string type);
+		WrongAnimal(const WrongAnimal& copy);
 
-		virtual ~Animal();
+		virtual ~WrongAnimal();
 
-		Animal& operator=(const Animal& copy);
+		WrongAnimal& operator=(const WrongAnimal& copy);
 
-		virtual void makeSound();
+		void makeSound();
 };
