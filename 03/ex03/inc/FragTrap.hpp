@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 12:26:35 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/19 15:55:58 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/01/27 14:29:09 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 # include "ClapTrap.hpp"
 
 class FragTrap: virtual public ClapTrap {
+	protected:
+		static const unsigned int init_val_hit_points = 100;
+		static const unsigned int init_val_energy_points = 100;
+		static const unsigned int init_val_attack_points = 30;
 	public:
 		FragTrap();
 		FragTrap(std::string name);
