@@ -1,6 +1,6 @@
-NAME = animal
+NAME = Fixed
 
-SRC_FILES = Animal.cpp Dog.cpp Cat.cpp main.cpp Brain.cpp RNG.cpp
+SRC_FILES = Fixed.cpp main.cpp Point.cpp bsp.cpp
 
 SRC_DIR = src
 OBJ_DIR = obj
