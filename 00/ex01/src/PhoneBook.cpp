@@ -43,8 +43,7 @@ void Phonebook::moveContacts(void)
 void Phonebook::addContact(void)
 {
 	if (contact_count == 7)
-		moveContacts();
-	std::cout << contact_count << std::endl;
+		moveContacts(), contact_count--;
 	contacts[contact_count].setFirstName(get_input("FIRST NAME"));
 	if (contacts[contact_count].getFirstName().empty())
 		return ;
@@ -61,8 +60,7 @@ void Phonebook::addContact(void)
 	if (contacts[contact_count].getSecret().empty())
 		return ;
 	std::cout << "Contact entered into the phonebook" << std::endl;
-	if (contact_count != 7)
-		contact_count++;
+	contact_count++;
 }
 
 static void print_name(std::string name)
@@ -79,7 +77,7 @@ static void print_name(std::string name)
 
 void Phonebook::printContact(void) const
 {
-	for (int i = 0; i <= contact_count; i++)
+	for (int i = 0; i < contact_count; i++)
 	{
 		for (int j = 0; j < 9; j++)
 			std::cout << " ";
@@ -107,8 +105,8 @@ int Phonebook::get_index(void) const
 			std::cout << std::endl;
 			return (-1);
 		}
-		if ((index <= 0 && index != -1) || index > contact_count + 1)
-			std::cout << "Invalid index please try an index between " << 1 << " & " << contact_count + 1 << ", or -1 to cancel" << std::endl;
+		if ((index <= 0 && index != -1) || index > contact_count)
+			std::cout << "Invalid index please try an index between " << 1 << " & " << contact_count << ", or -1 to cancel" << std::endl;
 		else
 			break;
 	}
