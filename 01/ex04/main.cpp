@@ -4,7 +4,6 @@
 int main(int argc, char **argv) {
 	if (argc != 4 || !argv[1] || !argv[2] || !argv[3] || argv[2][0] == '\0')
 		return (1);
-	printf("%s %s\n", argv[2], argv[3]);
 	std::ifstream in(argv[1]);
 	std::string repl_file(argv[1]);
 	repl_file.append(".replace");
