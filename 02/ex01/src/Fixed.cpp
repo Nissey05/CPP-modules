@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 11:29:32 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/08 21:24:17 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/02/05 15:52:53 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ Fixed& Fixed::operator=(const Fixed& copy) {
 
 
 float Fixed::toFloat(void) const {
-	return static_cast<float>(value / (1 << fractional_bits));
+ 	return (static_cast<float>((float)value / (float)(1 << fractional_bits)));
 }
 
 int Fixed::toInt(void) const {

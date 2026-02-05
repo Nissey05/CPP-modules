@@ -1,11 +1,5 @@
 #include "Point.hpp"
 
-// bool check_points(Point const a, Point const b, Point const point)
-// {
-// 	if (a.getX() < b.getX() && (point.getX() < a.getX() || point.getX() > b.getX()))
-
-// }
-
 float cross(Point const&u, Point const& v)
 {
 	return ((u.getX() * v.getY() - u.getY() * v.getX()).toFloat());
