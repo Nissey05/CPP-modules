@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 12:52:02 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/27 14:49:34 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/02/07 14:57:19 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ DiamondTrap::DiamondTrap() {
 	attack_points = FragTrap::init_val_attack_points;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name){
+DiamondTrap::DiamondTrap(std::string name) :
+ScavTrap(name),
+FragTrap(name)
+{
 	std::cout << "DiamondTrap name constructor called" << std::endl;
 	this->name = name;
 	ClapTrap::name.append("_clap_name");
@@ -33,11 +36,18 @@ DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name){
 
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap& copy) {
 	std::cout << "DiamondTrap copy assignment operator called" << std::endl;
+	if (&copy == this)
+		return (*this);
+	name = copy.name;
 	ClapTrap::operator=(copy);
 	return (*this);
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap& copy) : ClapTrap(copy), ScavTrap(copy), FragTrap(copy){
+DiamondTrap::DiamondTrap(const DiamondTrap& copy) :
+ClapTrap(copy),
+ScavTrap(copy),
+FragTrap(copy)
+{
 	std::cout << "DiamondTrap copy constructor called" << std::endl;
 	*this = copy;
 }

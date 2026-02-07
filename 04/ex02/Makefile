@@ -1,6 +1,6 @@
 NAME = animal
 
-SRC_FILES = Animal.cpp Dog.cpp Cat.cpp main.cpp Brain.cpp RNG.cpp
+SRC_FILES = Animal.cpp Dog.cpp Cat.cpp main.cpp Brain.cpp RNG.cpp WrongCat.cpp WrongAnimal.cpp
 
 SRC_DIR = src
 OBJ_DIR = obj

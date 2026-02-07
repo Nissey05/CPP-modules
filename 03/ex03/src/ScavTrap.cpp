@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 00:15:07 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/27 14:30:32 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/02/07 14:52:08 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ ScavTrap::~ScavTrap() {
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& copy) {
 	std::cout << "ScavTrap copy assignment operator called" << std::endl;
+	if (&copy == this)
+		return (*this);
 	ClapTrap::operator=(copy);
 	return (*this);
 }

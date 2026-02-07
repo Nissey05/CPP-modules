@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 18:11:14 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/15 12:25:08 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/02/07 14:58:18 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ ClapTrap::~ClapTrap() {
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& copy) {
 	std::cout << "ClapTrap copy assignment operator called" << std::endl;
+	if (&copy == this)
+		return (*this);
 	this->attack_points = copy.attack_points;
 	this->energy_points = copy.energy_points;
 	this->hit_points = copy.hit_points;
