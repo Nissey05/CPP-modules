@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 20:18:25 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/02/07 14:54:23 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/02/09 11:38:20 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void Dog::setIdea(int i, std::string idea)
 
 std::string Dog::getIdea(int i)
 {
-	if (i < 100)
+	if (i < 100 && !brain->getIdea(i).empty())
 		return (brain->getIdea(i));
 	return ("No thoughts here");
 }

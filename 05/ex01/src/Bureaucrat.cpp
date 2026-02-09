@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include <iostream>
 #include <stdexcept>
 
@@ -70,6 +71,19 @@ const std::string& Bureaucrat::getName(void) const {
 
 int Bureaucrat::getGrade(void) const {
 	return (grade);
+}
+
+void Bureaucrat::signForm(Form& form) const {
+	try
+	{
+		form.beSigned(*this);
+		std::cout << name << " signed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+	}
+	
 }
 
 std::ostream& operator<<(std::ostream &os, const Bureaucrat &bc) {

@@ -13,8 +13,10 @@ int main(void)
 	Dog *doggusy = new Dog();
 	*doggusy = *dogster;
 	doggusy->makeSound();
+	dogster->setIdea(2, "I love cheese more");
 	delete dogster;
 	std::cout << doggusy->getIdea(1) << std::endl;
+	std::cout << doggusy->getIdea(100) << std::endl;
 	delete kitty;
 	delete petertje;
 	delete doggusy;
