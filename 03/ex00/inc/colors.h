@@ -1,29 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   colors.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/13 00:01:27 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/02/10 18:45:06 by nhendrik         ###   ########.fr       */
+/*   Created: 2026/02/10 18:27:18 by nhendrik          #+#    #+#             */
+/*   Updated: 2026/02/10 18:34:50 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-# include "ClapTrap.hpp"
-
-class ScavTrap: public ClapTrap {
-	public:
-		ScavTrap();
-		ScavTrap(std::string name);
-		ScavTrap(const ScavTrap& copy);
-
-		~ScavTrap();
-
-		ScavTrap& operator=(const ScavTrap& copy);
-
-		void attack(const std::string& target);
-		void guardGate(void);
-};
+#define BOLD_BRIGHT_GREEN "\033[1;92m"
+#define BOLD_RED_BACK "\033[1;7;31m"
+#define RESET "\033[0m"

@@ -6,15 +6,16 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 12:26:39 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/02/07 14:58:14 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/02/10 18:44:54 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+#include "colors.h"
 
 
 FragTrap::FragTrap() {
-	std::cout << "FragTrap default constructor called" << std::endl;
+	std::cout << BOLD_BRIGHT_MAGENTA << "FragTrap default constructor called" << RESET << std::endl;
 	name = "FragTrap";
 	hit_points = 100;
 	energy_points = 100;
@@ -22,7 +23,7 @@ FragTrap::FragTrap() {
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name) {
-	std::cout << "FragTrap name constructor called" << std::endl;
+	std::cout << BOLD_BRIGHT_MAGENTA << "FragTrap name constructor called" << RESET << std::endl;
 	hit_points = 100;
 	energy_points = 100;
 	attack_points = 30;
@@ -30,14 +31,14 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 }
 
 FragTrap::FragTrap(const FragTrap& copy) : ClapTrap(copy) {
-	std::cout << "FragTrap copy constructor called" << std::endl;}
+	std::cout << BOLD_BRIGHT_MAGENTA << "FragTrap copy constructor called" << RESET << std::endl;}
 
 FragTrap::~FragTrap() {
-	std::cout << "FragTrap default destructor called" << std::endl;
+	std::cout << BOLD_BRIGHT_MAGENTA << "FragTrap default destructor called" << RESET << std::endl;
 }
 
 FragTrap& FragTrap::operator=(const FragTrap& copy) {
-	std::cout << "FragTrap copy assignment operator called" << std::endl;
+	std::cout << BOLD_BRIGHT_MAGENTA << "FragTrap copy assignment operator called" << RESET << std::endl;
 	if (&copy == this)
 		return (*this);
 	ClapTrap::operator=(copy);
@@ -45,5 +46,5 @@ FragTrap& FragTrap::operator=(const FragTrap& copy) {
 }
 
 void FragTrap::highFivesGuys(void) {
-	std::cout << "FragTrap " << name << " asks for a high-five." << std::endl;
+	std::cout << BOLD_BRIGHT_MAGENTA << "FragTrap " << name << " asks for a high-five." << RESET << std::endl;
 }
