@@ -6,13 +6,11 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 00:01:27 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/15 12:31:23 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/02/10 17:00:49 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
 
 # include "ClapTrap.hpp"
 
@@ -29,5 +27,3 @@ class ScavTrap: public ClapTrap {
 		void attack(const std::string& target);
 		void guardGate(void);
 };
-
-#endif

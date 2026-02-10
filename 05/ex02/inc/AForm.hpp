@@ -1,0 +1,41 @@
+#pragma once
+
+#include <iostream>
+
+class Bureaucrat;
+
+class AForm
+{
+private:
+	const std::string name;
+	bool sign = false;
+	const int sign_grade;
+	const int exec_grade;
+
+public:
+	AForm();
+	AForm(const std::string& name, const int exec_grade, const int sign_grade);
+	AForm(const AForm& copy);
+	~AForm();
+
+	AForm &operator=(const AForm &copy);
+
+	const std::string &getName() const;
+	bool getSign() const;
+	int getSignGrade() const;
+	int getExecGrade() const;
+
+	class GradeTooHighException : public std::exception
+	{
+		virtual const char *what() const throw();
+	};
+
+	class GradeTooLowException : public std::exception
+	{
+		virtual const char *what() const throw();
+	};
+
+	virtual void beSigned(const Bureaucrat &bc) = 0;
+};
+
+std::ostream &operator<<(std::ostream &os, const AForm &Aform);

@@ -6,13 +6,11 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 12:26:35 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/19 15:55:53 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/02/10 17:01:02 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
 
 # include "ClapTrap.hpp"
 
@@ -28,5 +26,3 @@ class FragTrap: public ClapTrap {
 
 		void highFivesGuys(void);
 };
-
-#endif

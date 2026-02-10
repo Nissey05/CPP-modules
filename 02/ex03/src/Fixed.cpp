@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 11:29:32 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/02/07 14:58:41 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/02/10 15:43:00 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Fixed::Fixed()
 	//std::cout << "Default constructor called" << std::endl;
 	value = 0;
 }
-
 
 Fixed::Fixed(const int val) {
 	value = val << fractional_bits;
@@ -40,7 +39,7 @@ Fixed::~Fixed() {
 	//std::cout << "Destructor called" << std::endl;
 }
 
-int Fixed::getRawBits(void) {
+int Fixed::getRawBits(void) const {
 	//std::cout << "getRawBits member function called" << std::endl;
 	return (value);
 }

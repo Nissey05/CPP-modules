@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 19:55:23 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/02/05 15:55:22 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/02/10 16:03:37 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,33 @@ int main( void ) {
 	std::cout << "d: " << d << std::endl;
 	std::cout << "max(++c, d--): " << Fixed::max(++c, d--) << std::endl;
 	std::cout << "min(c, d): " << Fixed::min(c, d) << std::endl;
-
+	std::cout << "c: " << c << ", d: " << d << std::endl;
+	if (c == d)
+		std::cout << "c == d" << std::endl;
+	if (c != d)
+		std::cout << "c != d" << std::endl;
+	if (c <= d)
+		std::cout << "c <= d" << std::endl;
+	if (c >= d)
+		std::cout << "c >= d" << std::endl;
+	if (c < d)
+		std::cout << "c < d" << std::endl;
+	if (c > d)
+		std::cout << "c > d" << std::endl;
+	c = 5;
+	d = 5;
+	std::cout << "c: " << c << ", d: " << d << std::endl;
+	if (c == d)
+		std::cout << "c == d" << std::endl;
+	if (c != d)
+		std::cout << "c != d" << std::endl;
+	if (c <= d)
+		std::cout << "c <= d" << std::endl;
+	if (c >= d)
+		std::cout << "c >= d" << std::endl;
+	if (c < d)
+		std::cout << "c < d" << std::endl;
+	if (c > d)
+		std::cout << "c > d" << std::endl;
 	return 0;
 }
