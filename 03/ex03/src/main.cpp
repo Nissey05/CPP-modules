@@ -1,13 +1,27 @@
 #include "../inc/ClapTrap.hpp"
 #include "../inc/ScavTrap.hpp"
 #include "../inc/DiamondTrap.hpp"
+#include "colors.h"
 
 int main(void)
 {
-	// ClapTrap a("Clappy");
-	// a.attack("Orhan");
-	// ScavTrap b("pieter");
-	// b.attack("abcd");
+	std::cout << BOLD_RED_BACK << "ClapTrap:" << RESET << std::endl;
+	ClapTrap a("Clappy");
+	a.attack("Orhan");
+	a.beRepaired(0);
+	a.takeDamage(50000);
+	a.attack("Orhan");
+	std::cout << BOLD_RED_BACK << "ScavTrap:" << RESET << std::endl;
+	ScavTrap b("pieter");
+	b.attack("abcd");
+	b.guardGate();
+	b.beRepaired(69);
+	b.takeDamage(420);
+	std::cout << BOLD_RED_BACK << "ScavTrap:" << RESET << std::endl;
+	FragTrap c("Aardappel");
+	c.attack("a");
+	c.highFivesGuys();
+	std::cout << BOLD_RED_BACK << "ScavTrap:" << RESET << std::endl;
 	DiamondTrap dia("Dia");
 	dia.highFivesGuys();
 	dia.whoAmI();

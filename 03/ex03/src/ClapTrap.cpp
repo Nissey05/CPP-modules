@@ -6,36 +6,36 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 18:11:14 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/02/07 14:51:52 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/02/11 01:33:14 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ClapTrap.hpp"
-
+#include "colors.h"
 
 ClapTrap::ClapTrap() :
 name("ClapTrap")
 {
-	std::cout << "ClapTrap default constructor called" << std::endl;
+	std::cout << BOLD_BRIGHT_GREEN << "ClapTrap default constructor called" << RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) :
 name(name)
 {
-	std::cout << "ClapTrap name constructor called" << std::endl;
+	std::cout << BOLD_BRIGHT_GREEN << "ClapTrap name constructor called" << RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& copy) {
-	std::cout << "ClapTrap copy constructor called" << std::endl;
+	std::cout << BOLD_BRIGHT_GREEN << "ClapTrap copy constructor called" << RESET << std::endl;
 	*this = copy;
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "ClapTrap default destructor called" << std::endl;
+	std::cout << BOLD_BRIGHT_GREEN << "ClapTrap default destructor called" << RESET << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& copy) {
-	std::cout << "ClapTrap copy assignment operator called" << std::endl;
+	std::cout << BOLD_BRIGHT_GREEN << "ClapTrap copy assignment operator called" << RESET << std::endl;
 	if (&copy == this)
 		return (*this);
 	this->attack_points = copy.attack_points;
@@ -49,17 +49,17 @@ static void print_error(unsigned int hit_points, unsigned int energy_points, std
 {
 	if (!hit_points && !energy_points)
 	{
-		std::cout << "ClapTrap " << name << " has ran out of hit- & energy points!" << std::endl;
+		std::cout << BOLD_BRIGHT_GREEN << "ClapTrap " << name << " has ran out of hit- & energy points!" << RESET << std::endl;
 		return ;
 	}
 	if (!hit_points)
 	{
-		std::cout << "ClapTrap " << name << " has ran out of hitpoints!" << std::endl;
+		std::cout << BOLD_BRIGHT_GREEN << "ClapTrap " << name << " has ran out of hitpoints!" << RESET << std::endl;
 		return ;
 	}
 	if (!energy_points)
 	{
-		std::cout << "ClapTrap " << name << " has ran out of energy points!" << std::endl;
+		std::cout << BOLD_BRIGHT_GREEN << "ClapTrap " << name << " has ran out of energy points!" << RESET << std::endl;
 		return ;
 	}
 }
@@ -70,8 +70,7 @@ void ClapTrap::attack(const std::string& target) {
 		print_error(hit_points, energy_points, name);
 		return ;
 	}
-		
-	std::cout << "ClapTrap " << name << " attacks " << target << ", causing " << attack_points << " points of damage!" << std::endl;
+	std::cout << BOLD_BRIGHT_GREEN << "ClapTrap " << name << " attacks " << target << ", causing " << attack_points << " points of damage!" << RESET << std::endl;
 	energy_points--;
 }
 
@@ -81,7 +80,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
 		print_error(hit_points, 1, name);
 		return ;
 	}
-	std::cout << "ClapTrap " << name << " has taken " << amount << " points of damage!" << std::endl;
+	std::cout << BOLD_BRIGHT_GREEN << "ClapTrap " << name << " has taken " << amount << " points of damage!" << RESET << std::endl;
 	if (amount >= hit_points)
 		hit_points = 0;
 	else
@@ -94,7 +93,7 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		print_error(hit_points, energy_points, name);
 		return ;
 	}
-	std::cout << "ClapTrap " << name << " has repaired " << amount << " hitpoints!" << std::endl;
+	std::cout << BOLD_BRIGHT_GREEN << "ClapTrap " << name << " has repaired " << amount << " hitpoints!" << RESET << std::endl;
 	hit_points += amount;
 	energy_points--;
 }

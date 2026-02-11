@@ -6,14 +6,15 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 12:52:02 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/02/07 14:57:19 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/02/11 01:33:59 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/DiamondTrap.hpp"
+#include "colors.h"
 
 DiamondTrap::DiamondTrap() {
-	std::cout << "DiamondTrap default constructor called" << std::endl;
+	std::cout << BOLD_BRIGHT_CYAN << "DiamondTrap default constructor called" << RESET << std::endl;
 	name = "DiamondTrap";
 	ClapTrap::name = "DiamondTrap_clap_name";
 	hit_points = FragTrap::init_val_hit_points;
@@ -25,17 +26,17 @@ DiamondTrap::DiamondTrap(std::string name) :
 ScavTrap(name),
 FragTrap(name)
 {
-	std::cout << "DiamondTrap name constructor called" << std::endl;
+	std::cout << BOLD_BRIGHT_CYAN << "DiamondTrap name constructor called" << RESET << std::endl;
 	this->name = name;
 	ClapTrap::name.append("_clap_name");
 	hit_points = FragTrap::init_val_hit_points;
 	energy_points = ScavTrap::init_val_energy_points;
 	attack_points = FragTrap::init_val_attack_points;
-	std::cout << hit_points << " " << energy_points << " " << attack_points << std::endl;
+	std::cout << BOLD_BRIGHT_CYAN << hit_points << " " << energy_points << " " << attack_points << RESET << std::endl;
 }
 
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap& copy) {
-	std::cout << "DiamondTrap copy assignment operator called" << std::endl;
+	std::cout << BOLD_BRIGHT_CYAN << "DiamondTrap copy assignment operator called" << RESET << std::endl;
 	if (&copy == this)
 		return (*this);
 	name = copy.name;
@@ -48,15 +49,15 @@ ClapTrap(copy),
 ScavTrap(copy),
 FragTrap(copy)
 {
-	std::cout << "DiamondTrap copy constructor called" << std::endl;
+	std::cout << BOLD_BRIGHT_CYAN << "DiamondTrap copy constructor called" << RESET << std::endl;
 	*this = copy;
 }
 
 DiamondTrap::~DiamondTrap() {
-	std::cout << "DiamondTrap default destructor called" << std::endl;
+	std::cout << BOLD_BRIGHT_CYAN << "DiamondTrap default destructor called" << RESET << std::endl;
 }
 
 void DiamondTrap::whoAmI(void) {
-	std::cout << "My DiamondTrap name is " << this->name << ". My Claptrap name is " << ClapTrap::name << "." << std::endl;
-	//std::cout << "I have " << attack_points << " attack_points, " << hit_points << " hit_points and " << energy_points << " energy_points." << std::endl; 
+	std::cout << BOLD_BRIGHT_CYAN << "My DiamondTrap name is " << this->name << ". My Claptrap name is " << ClapTrap::name << "." << RESET << std::endl;
+	//std::cout << BOLD_BRIGHT_CYAN << "I have " << attack_points << " attack_points, " << hit_points << " hit_points and " << energy_points << " energy_points." << RESET << std::endl; 
 }
