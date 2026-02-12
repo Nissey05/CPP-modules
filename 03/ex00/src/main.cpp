@@ -9,4 +9,5 @@ int main(void)
 	a.beRepaired(0);
 	a.takeDamage(50000);
 	a.attack("Orhan");
+	std::cout << BOLD_RED_BACK << "Destructors:" << RESET << std::endl;
 }

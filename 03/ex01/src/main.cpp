@@ -16,4 +16,5 @@ int main(void)
 	b.guardGate();
 	b.beRepaired(69);
 	b.takeDamage(420);
+	std::cout << BOLD_RED_BACK << "Destructors:" << RESET << std::endl;
 }

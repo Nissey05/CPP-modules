@@ -29,4 +29,5 @@ int main(void)
 	DiamondTrap piet;
 	piet = dia;
 	piet.whoAmI();
+	std::cout << BOLD_RED_BACK << "Destructors:" << RESET << std::endl;
 }

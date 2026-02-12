@@ -21,4 +21,5 @@ int main(void)
 	FragTrap c("Aardappel");
 	c.attack("a");
 	c.highFivesGuys();
+	std::cout << BOLD_RED_BACK << "Destructors:" << RESET << std::endl;
 }
