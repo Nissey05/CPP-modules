@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 12:52:02 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/02/11 01:33:59 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/02/12 14:41:23 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ FragTrap(name)
 	hit_points = FragTrap::init_val_hit_points;
 	energy_points = ScavTrap::init_val_energy_points;
 	attack_points = FragTrap::init_val_attack_points;
-	std::cout << BOLD_BRIGHT_CYAN << hit_points << " " << energy_points << " " << attack_points << RESET << std::endl;
 }
 
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap& copy) {

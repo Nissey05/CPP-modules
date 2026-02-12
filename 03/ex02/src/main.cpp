@@ -17,7 +17,7 @@ int main(void)
 	b.guardGate();
 	b.beRepaired(69);
 	b.takeDamage(420);
-	std::cout << BOLD_RED_BACK << "ScavTrap:" << RESET << std::endl;
+	std::cout << BOLD_RED_BACK << "FragTrap:" << RESET << std::endl;
 	FragTrap c("Aardappel");
 	c.attack("a");
 	c.highFivesGuys();
