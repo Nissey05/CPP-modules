@@ -6,11 +6,12 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 20:19:50 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/21 20:45:07 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/02/15 23:31:13 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Cat.hpp"
+#include "Cat.hpp"
+#include "RNG.hpp"
 #include <random>
 
 Cat::Cat() :
@@ -41,26 +42,21 @@ Cat& Cat::operator=(const Cat& copy) {
 }
 
 void Cat::makeSound(void) {
-	std::random_device rd;
-	std::mt19937 gen(rd());
-	std::uniform_int_distribution<> e(2, 7), o(3, 10), dot(0, 5);
-
-
 	std::cout << "M";
-	int i = e(gen);
+	int i = RNG(2, 7);
 	while (i > 0)
 	{
 		std::cout << "e";
 		i--;
 	}
-	i = o(gen);
+	i = RNG(3, 10);
 	while (i > 0)
 	{
 		std::cout << "o";
 		i--;
 	}
 	std::cout << "w";
-	i = dot(gen);
+	i = RNG(0, 5);
 	while (i > 0)
 	{
 		std::cout << ".";

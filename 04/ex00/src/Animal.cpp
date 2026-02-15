@@ -6,11 +6,12 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 20:15:56 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/21 20:48:31 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/02/15 23:35:07 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Animal.hpp"
+#include "Animal.hpp"
+#include "colors.h"
 
 Animal::Animal() :
 type("Animal")

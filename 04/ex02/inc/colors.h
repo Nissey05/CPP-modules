@@ -1,0 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   colors.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/10 18:27:18 by nhendrik          #+#    #+#             */
+/*   Updated: 2026/02/11 01:36:13 by nhendrik         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#pragma once
+
+#define BOLD_BRIGHT_GREEN "\033[1;92m"
+#define BOLD_BRIGHT_YELLOW "\033[1;93m"
+#define BOLD_BRIGHT_MAGENTA "\033[1;95m"
+#define BOLD_BRIGHT_CYAN "\033[1;96m"
+#define BOLD_RED_BACK "\033[1;7;31m"
+#define RESET "\033[0m"

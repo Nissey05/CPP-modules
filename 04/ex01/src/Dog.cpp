@@ -6,11 +6,12 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 20:18:25 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/22 16:09:50 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/02/15 23:33:55 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Dog.hpp"
+#include "Dog.hpp"
+#include "RNG.h"
 #include <random>
 
 Dog::Dog() :
@@ -47,11 +48,7 @@ Dog& Dog::operator=(const Dog& copy) {
 
 
 void Dog::makeSound(void) {
-	std::random_device rd;
-	std::mt19937 gen(rd());
-	std::uniform_int_distribution<> bark(1, 4);
-
-	for (int c = bark(gen); c > 0; c--)
+	for (int c = RNG(1, 4); c > 0; c--)
 		std::cout << "Woof!" << std::endl;
 }
 
