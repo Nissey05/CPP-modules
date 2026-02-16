@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 20:17:03 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/22 19:56:14 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/02/16 22:01:27 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,8 @@ class Animal {
 
 		Animal& operator=(const Animal& copy);
 
-		virtual void makeSound() = 0;
+		virtual void makeSound() const = 0;
+
+		std::string getType(void) const;
+		void setType(const std::string name);
 };

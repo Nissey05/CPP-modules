@@ -10,38 +10,38 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/WrongCat.hpp"
-#include <random>
+#include "WrongCat.hpp"
+#include "colors.h"
 
 WrongCat::WrongCat() :
 WrongAnimal("WrongCat")
 {
-	std::cout << "WrongCat default constructor called" << std::endl;
+	std::cout << BOLD_BRIGHT_RED_UNDERLINE << "WrongCat default constructor called" << RESET << std::endl;
 }
 
 WrongCat::WrongCat(std::string name) :
 WrongAnimal(name)
 {
-	std::cout << "WrongCat name constructor called" << std::endl;
+	std::cout << BOLD_BRIGHT_RED_UNDERLINE << "WrongCat name constructor called" << RESET << std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat& copy) :
 WrongAnimal(copy)
 {
-	std::cout << "WrongCat copy constructor called" << std::endl;
+	std::cout << BOLD_BRIGHT_RED_UNDERLINE << "WrongCat copy constructor called" << RESET << std::endl;
 	*this = copy;
 }
 
 WrongCat::~WrongCat() {
-	std::cout << "WrongCat default destructor called" << std::endl;
+	std::cout << BOLD_BRIGHT_RED_UNDERLINE << "WrongCat default destructor called" << RESET << std::endl;
 }
 
 WrongCat& WrongCat::operator=(const WrongCat& copy) {
-	std::cout << "WrongCat copy assignment operator called" << std::endl;
+	std::cout << BOLD_BRIGHT_RED_UNDERLINE << "WrongCat copy assignment operator called" << RESET << std::endl;
 	this->type = copy.type;
 	return (*this);
 }
 
-void WrongCat::makeSound(void) {
-	std::cout << "meow" << std::endl;
+void WrongCat::makeSound(void) const {
+	std::cout << BOLD_BRIGHT_RED_UNDERLINE << "mew" << RESET << std::endl;
 }

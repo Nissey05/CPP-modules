@@ -22,7 +22,7 @@ class Dog: public Animal {
 		Dog(const Dog& copy);
 
 		virtual ~Dog();
-		virtual void makeSound();
+		virtual void makeSound() const;
 
 		Dog& operator=(const Dog& copy);
 };

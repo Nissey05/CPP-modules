@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 20:19:23 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/22 16:08:03 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/02/16 22:03:12 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ class Cat: public Animal {
 		Cat(const Cat& copy);
 
 		virtual ~Cat();
-		virtual void makeSound();
+		virtual void makeSound() const;
 
 		Cat& operator=(const Cat& copy);
 
 		void setIdea(int i, std::string idea);
-		std::string getIdea(int i);
+		std::string getIdea(int i) const;
 };

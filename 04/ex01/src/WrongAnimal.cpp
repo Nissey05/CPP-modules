@@ -10,36 +10,46 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/WrongAnimal.hpp"
+#include "WrongAnimal.hpp"
+#include "colors.h"
 
 WrongAnimal::WrongAnimal() :
 type("WrongAnimal")
 {
-	std::cout << "WrongAnimal default constructor called" << std::endl;
+	std::cout << BOLD_BRIGHT_RED << "WrongAnimal default constructor called" << RESET << std::endl;
 }
 
 WrongAnimal::WrongAnimal(std::string name) :
 type(name)
 {
-	std::cout << "WrongAnimal name constructor called" << std::endl;
+	std::cout << BOLD_BRIGHT_RED << "WrongAnimal name constructor called" << RESET << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& copy) {
-	std::cout << "WrongAnimal copy constructor called" << std::endl;
+	std::cout << BOLD_BRIGHT_RED << "WrongAnimal copy constructor called" << RESET << std::endl;
 	*this = copy;
 }
 
 WrongAnimal::~WrongAnimal() {
-	std::cout << "WrongAnimal default destructor called" << std::endl;
+	std::cout << BOLD_BRIGHT_RED << "WrongAnimal default destructor called" << RESET << std::endl;
 }
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& copy) {
-	std::cout << "WrongAnimal copy assignment operator called" << std::endl;
+	std::cout << BOLD_BRIGHT_RED << "WrongAnimal copy assignment operator called" << RESET << std::endl;
 	this->type = copy.type;
 	return (*this);
 }
 
-void WrongAnimal::makeSound()
+void WrongAnimal::makeSound() const {
+	std::cout << BOLD_BRIGHT_RED << "sus animal sound" << RESET << std::endl;
+}
+
+std::string WrongAnimal::getType(void) const
 {
-	std::cout << "sus" << std::endl;
+	return (type);
+}
+
+void WrongAnimal::setType(const std::string name)
+{
+	type = name;
 }

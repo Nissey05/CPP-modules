@@ -6,7 +6,7 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 20:19:23 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/01/22 14:19:05 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/02/16 20:45:54 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class WrongCat: public WrongAnimal {
 		WrongCat(const WrongCat& copy);
 
 		virtual ~WrongCat();
-		void makeSound();
+		void makeSound() const;
 
 		WrongCat& operator=(const WrongCat& copy);
 };

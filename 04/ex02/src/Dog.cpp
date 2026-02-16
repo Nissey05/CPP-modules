@@ -6,42 +6,43 @@
 /*   By: nhendrik <nhendrik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 20:18:25 by nhendrik          #+#    #+#             */
-/*   Updated: 2026/02/09 11:38:20 by nhendrik         ###   ########.fr       */
+/*   Updated: 2026/02/16 22:04:00 by nhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Dog.hpp"
-#include "../inc/RNG.h"
+#include "Dog.hpp"
+#include "RNG.h"
+#include "colors.h"
 
 Dog::Dog() :
 Animal("Dog")
 {
-	std::cout << "Dog default constructor called" << std::endl;
+	std::cout << BOLD_BRIGHT_CYAN << "Dog default constructor called" << RESET << std::endl;
 	this->brain = new Brain();
 }
 
 Dog::Dog(std::string name) :
 Animal(name)
 {
-	std::cout << "Dog name constructor called" << std::endl;
+	std::cout << BOLD_BRIGHT_CYAN << "Dog name constructor called" << RESET << std::endl;
 	this->brain = new Brain();
 }
 
 Dog::Dog(const Dog& copy) :
 Animal(copy)
 {
-	std::cout << "Dog copy constructor called" << std::endl;
+	std::cout << BOLD_BRIGHT_CYAN << "Dog copy constructor called" << RESET << std::endl;
 	this->brain = new Brain();
 	*this = copy;
 }
 
 Dog::~Dog() {
 	delete brain;
-	std::cout << "Dog default destructor called" << std::endl;
+	std::cout << BOLD_BRIGHT_CYAN << "Dog default destructor called" << RESET << std::endl;
 }
 
 Dog& Dog::operator=(const Dog& copy) {
-	std::cout << "Dog copy assignment operator called" << std::endl;
+	std::cout << BOLD_BRIGHT_CYAN << "Dog copy assignment operator called" << RESET << std::endl;
 	if (&copy == this)
 		return (*this);
 	this->type = copy.type;
@@ -49,9 +50,9 @@ Dog& Dog::operator=(const Dog& copy) {
 	return (*this);
 }
 
-void Dog::makeSound(void) {
+void Dog::makeSound(void) const {
 	for (int c = RNG(1, 4); c > 0; c--)
-		std::cout << "Woof!" << std::endl;
+		std::cout << BOLD_BRIGHT_CYAN << "Woof!" << RESET << std::endl;
 }
 
 void Dog::setIdea(int i, std::string idea)
@@ -60,7 +61,7 @@ void Dog::setIdea(int i, std::string idea)
 		brain->setIdea(i, idea);
 }
 
-std::string Dog::getIdea(int i)
+std::string Dog::getIdea(int i) const
 {
 	if (i < 100 && !brain->getIdea(i).empty())
 		return (brain->getIdea(i));
