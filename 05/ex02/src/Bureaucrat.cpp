@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 #include <iostream>
 #include <stdexcept>
 
@@ -24,10 +24,7 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat::Bureaucrat(const Bureaucrat& cpy)
 : name(cpy.name)
 {
-	if (this != &cpy)
-	{
-		*this = cpy;
-	}
+	*this = cpy;
 }
 
 Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& cpy)
@@ -73,7 +70,7 @@ int Bureaucrat::getGrade(void) const {
 	return (grade);
 }
 
-void Bureaucrat::signForm(Form& form) const {
+void Bureaucrat::signForm(AForm& form) const {
 	try
 	{
 		form.beSigned(*this);

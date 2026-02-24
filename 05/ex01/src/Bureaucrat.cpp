@@ -39,19 +39,17 @@ Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& cpy)
 	return (*this);
 }
 
-const char *Bureaucrat::GradeTooHighException::what(void) const throw()
+const char *Bureaucrat::GradeTooHighException::what(void) const noexcept
 {
 	return ("The bureaucrats grade is too high");
 }
 
-const char *Bureaucrat::GradeTooLowException::what(void) const throw()
+const char *Bureaucrat::GradeTooLowException::what(void) const noexcept
 {
 	return ("The bureaucrats grade is too low");
 }
 
 void Bureaucrat::incrementGrade(void) {
-	if (grade - 1 > 150)
-		throw Bureaucrat::GradeTooLowException();
 	if (grade - 1 <= 0)
 		throw Bureaucrat::GradeTooHighException();
 	grade--;
@@ -60,8 +58,6 @@ void Bureaucrat::incrementGrade(void) {
 void Bureaucrat::decrementGrade(void) {
 	if (grade + 1 > 150)
 		throw Bureaucrat::GradeTooLowException();
-	if (grade + 1 <= 0)
-		throw Bureaucrat::GradeTooHighException();
 	grade++;
 }
 

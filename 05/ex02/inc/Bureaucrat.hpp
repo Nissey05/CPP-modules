@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 
-class Form;
+class AForm;
 
 class	Bureaucrat
 {
@@ -20,18 +20,18 @@ class	Bureaucrat
 		const std::string& getName(void) const;
 		int getGrade(void) const;
 
-		void signForm(Form& form) const;
+		void signForm(AForm& form) const;
 
 		class GradeTooHighException : public std::exception
 		{
 			public:
-				virtual const char *what() const throw();
+				virtual const char *what() const noexcept;
 		};
 		
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				virtual const char *what() const throw();
+				virtual const char *what() const noexcept;
 		};
 
 };

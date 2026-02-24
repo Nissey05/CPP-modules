@@ -33,10 +33,7 @@ name(copy.name), sign_grade(copy.sign_grade), exec_grade(copy.exec_grade)
 		throw GradeTooHighException();
 	if (sign_grade <= 0)
 		throw GradeTooLowException();
-	if (this != &copy)
-	{
-		*this = copy;
-	}
+	*this = copy;
 }
 
 AForm&	AForm::operator=(const AForm& copy)
@@ -81,12 +78,12 @@ void AForm::beSigned(const Bureaucrat& bc)
 	sign = true;
 }
 
-const char *AForm::GradeTooHighException::what() const throw()
+const char *AForm::GradeTooHighException::what() const noexcept
 {
 	return ("Grade is too high");
 }
 
-const char *AForm::GradeTooLowException::what() const throw()
+const char *AForm::GradeTooLowException::what() const noexcept
 {
 	return ("Grade is too high");
 }

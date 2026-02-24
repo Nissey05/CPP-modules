@@ -27,15 +27,16 @@ public:
 
 	class GradeTooHighException : public std::exception
 	{
-		virtual const char *what() const throw();
+		virtual const char *what() const noexcept;
 	};
 
 	class GradeTooLowException : public std::exception
 	{
-		virtual const char *what() const throw();
+		virtual const char *what() const noexcept;
 	};
 
-	virtual void beSigned(const Bureaucrat &bc) = 0;
+	virtual void beSigned(const Bureaucrat &bc);
+	virtual void execute(Bureaucrat const & executor) const = 0;
 };
 
 std::ostream &operator<<(std::ostream &os, const AForm &Aform);
