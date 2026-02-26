@@ -5,7 +5,7 @@
 AForm::AForm() :
 name(""), sign_grade(150), exec_grade(150)
 {
-	std::cout << "AForm default constructor called" << std::endl;
+	// std::cout << "AForm default constructor called" << std::endl;
 }
 
 AForm::AForm(const std::string& name, const int exec_grade, const int sign_grade) :
@@ -24,7 +24,7 @@ name(name), sign_grade(sign_grade), exec_grade(exec_grade)
 AForm::AForm(const AForm& copy) :
 name(copy.name), sign_grade(copy.sign_grade), exec_grade(copy.exec_grade)
 {
-	std::cout << "AForm copy constructor called" << std::endl;
+	// std::cout << "AForm copy constructor called" << std::endl;
 	if (exec_grade > 150)
 		throw GradeTooHighException();
 	if (exec_grade <= 0)
@@ -38,7 +38,7 @@ name(copy.name), sign_grade(copy.sign_grade), exec_grade(copy.exec_grade)
 
 AForm&	AForm::operator=(const AForm& copy)
 {
-	std::cout << "AForm copy assignment operator called" << std::endl;
+	// std::cout << "AForm copy assignment operator called" << std::endl;
 	if (this != &copy)
 	{
 		sign = copy.sign;
@@ -48,7 +48,7 @@ AForm&	AForm::operator=(const AForm& copy)
 
 AForm::~AForm()
 {
-	std::cout << "AForm default destructor called" << std::endl;
+	// std::cout << "AForm default destructor called" << std::endl;
 }
 
 const std::string &AForm::getName() const
@@ -88,6 +88,10 @@ const char *AForm::GradeTooLowException::what() const noexcept
 	return ("Grade is too high");
 }
 
+const char *AForm::UnsignedForm::what(void) const noexcept
+{
+	return ("the form has not been signed");
+}
 
 std::ostream& operator<<(std::ostream &os, const AForm &Aform)
 {

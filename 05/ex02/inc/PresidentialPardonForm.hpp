@@ -8,7 +8,7 @@ class	PresidentialPardonForm : public AForm
 		std::string target;
 	public:
 		PresidentialPardonForm();
-		PresidentialPardonForm(const std::string &str);
+		PresidentialPardonForm(const std::string &target);
 		PresidentialPardonForm(const PresidentialPardonForm& copy);
 		~PresidentialPardonForm();
 
@@ -16,5 +16,4 @@ class	PresidentialPardonForm : public AForm
 
 		// void beSigned(const Bureaucrat &bc);
 		void execute(Bureaucrat const & executor) const;
-
 };

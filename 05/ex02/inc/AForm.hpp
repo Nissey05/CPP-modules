@@ -35,6 +35,11 @@ public:
 		virtual const char *what() const noexcept;
 	};
 
+	class UnsignedForm : public std::exception
+	{
+		public:
+			virtual const char *what() const noexcept;
+	};
 	virtual void beSigned(const Bureaucrat &bc);
 	virtual void execute(Bureaucrat const & executor) const = 0;
 };

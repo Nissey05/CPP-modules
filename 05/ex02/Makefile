@@ -1,6 +1,6 @@
-NAME = bureaucrat
+NAME = AForm
 
-SRC_FILES = Bureaucrat.cpp main.cpp Form.cpp
+SRC_FILES = Bureaucrat.cpp main.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp RNG.cpp
 
 SRC_DIR = src
 OBJ_DIR = obj

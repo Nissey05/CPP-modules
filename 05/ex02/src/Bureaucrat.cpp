@@ -36,12 +36,12 @@ Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& cpy)
 	return (*this);
 }
 
-const char *Bureaucrat::GradeTooHighException::what(void) const throw()
+const char *Bureaucrat::GradeTooHighException::what(void) const noexcept
 {
 	return ("The bureaucrats grade is too high");
 }
 
-const char *Bureaucrat::GradeTooLowException::what(void) const throw()
+const char *Bureaucrat::GradeTooLowException::what(void) const noexcept
 {
 	return ("The bureaucrats grade is too low");
 }
