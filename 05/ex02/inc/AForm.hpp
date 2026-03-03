@@ -16,7 +16,7 @@ public:
 	AForm();
 	AForm(const std::string& name, const int exec_grade, const int sign_grade);
 	AForm(const AForm& copy);
-	~AForm();
+	virtual ~AForm();
 
 	AForm &operator=(const AForm &copy);
 

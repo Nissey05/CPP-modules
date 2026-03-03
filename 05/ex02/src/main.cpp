@@ -8,11 +8,12 @@
 
 int main(void)
 {
+	AForm *form = nullptr;
 	try
 	{
 		Bureaucrat	bikkel("Bikkel", 25);
 		Bureaucrat	johannes("Johannes", 45);
-		AForm *form = new PresidentialPardonForm("Obama");
+		form = new PresidentialPardonForm("Obama");
 		bikkel.signForm(*form);
 		form->execute(bikkel);
 		johannes.signForm(*form);
@@ -21,11 +22,14 @@ int main(void)
 	{
 		std::cerr << e.what() << '\n';
 	}
+	if (form)
+		delete form;
+	form = nullptr;
 	try
 	{
 
 		Bureaucrat	reau("Reau", 1);
-		AForm *form = new RobotomyRequestForm("Obama");
+		form = new RobotomyRequestForm("Obama");
 		form->execute(reau);
 		reau.signForm(*form);
 		form->execute(reau);
@@ -38,7 +42,7 @@ int main(void)
 	try
 	{
 		Bureaucrat	shrub("Shrub", 1);
-		AForm *form = new ShrubberyCreationForm("Shrubster");
+		form = new ShrubberyCreationForm("Shrubster");
 		shrub.signForm(*form);
 		form->execute(shrub);
 	}

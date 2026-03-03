@@ -1,4 +1,4 @@
-NAME = bureaucrat
+NAME = form
 
 SRC_FILES = Bureaucrat.cpp main.cpp Form.cpp
 

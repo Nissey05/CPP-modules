@@ -1,4 +1,4 @@
-NAME = AForm
+NAME = aform
 
 SRC_FILES = Bureaucrat.cpp main.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp RNG.cpp
 

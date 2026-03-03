@@ -1,6 +1,6 @@
-NAME = intern
+NAME = scalarconverter
 
-SRC_FILES = Bureaucrat.cpp main.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp RNG.cpp Intern.cpp
+SRC_FILES = main.cpp ScalarConverter.cpp
 
 SRC_DIR = src
 OBJ_DIR = obj
@@ -9,7 +9,7 @@ OBJ = $(SRC_FILES:.cpp=.o)
 OBJ := $(OBJ:%=$(OBJ_DIR)/%)
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -MMD -MP
+CFLAGS = -Wall -Wextra -Werror -MMD -MP -std=c++11
 INC = -I inc/
 
 all: $(NAME)

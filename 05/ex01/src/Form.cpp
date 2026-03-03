@@ -88,7 +88,7 @@ const char *Form::GradeTooHighException::what() const noexcept
 
 const char *Form::GradeTooLowException::what() const noexcept
 {
-	return ("Grade is too high");
+	return ("Grade is too low");
 }
 
 
