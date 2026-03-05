@@ -1,4 +1,4 @@
-NAME = scalarconverter
+NAME = convert
 
 SRC_FILES = main.cpp ScalarConverter.cpp
 

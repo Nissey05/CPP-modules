@@ -2,6 +2,13 @@
 
 #include <string>
 
+enum Types {
+	Char,
+	Int,
+	Float,
+	Double
+};
+
 class ScalarConverter
 {
 	private:
