@@ -2,22 +2,17 @@
 
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 
 void printChar(std::string &input)
 {
-	int c;
-	if (input[1])
-		c = std::stoi(input);
-	else
-		c = (int)input.c_str()[0];
-	if (c > 127 || c < 0)
-		return ;
+	char c = input.c_str()[1];
 	std::cout << "char: ";
 	if (c < '!' || c == 127)
 		std::cout << "Not displayable" << std::endl;
 	else
-		std::cout << (char)c << std::endl;
-	std::cout << "int: " << c << std::endl;
+		std::cout << c << std::endl;
+	std::cout << "int: " << static_cast<int>(c) << std::endl;
 	std::cout << std::setprecision(1) << std::fixed;
 	std::cout << "float: " << static_cast<float>(c) << 'f' << std::endl;
 	std::cout << "double: " << static_cast<double>(c) << std::endl;
@@ -26,29 +21,130 @@ void printChar(std::string &input)
 void printInt(std::string &input)
 {
 	int nb = std::stoi(input);
-	std::cout << "int: ";
-	std::cout << nb << std::endl;
+	std::cout << "char: ";
+	if (nb >= 128)
+		std::cout << "impossible" << std::endl;
+	else if (nb < '!' || nb == 127)
+		std::cout << "Not displayable" << std::endl;
+	else
+		std::cout << static_cast<char>(nb) << std::endl;
+	std::cout << "int: " << nb << std::endl;
+	std::cout << std::setprecision(1) << std::fixed;
+	std::cout << "float: " << static_cast<float>(nb) << 'f' << std::endl;
+	std::cout << "double: " << static_cast<double>(nb) << std::endl;
 }
 
 void printFloat(std::string &input)
 {
 	float fl = std::stof(input);
+	std::cout << "char: ";
+	if (!std::isfinite(fl) || fl >= 128)
+		std::cout << "impossible" << std::endl;
+	else if (fl < '!' || fl == 127)
+		std::cout << "Not displayable" << std::endl;
+	else
+		std::cout << static_cast<char>(fl) << std::endl;
+	std::cout << "int: ";
+	if (fl <= INT_MAX_FLOAT && fl >= INT_MIN_FLOAT && std::isfinite(fl))
+		std::cout << static_cast<int>(fl) << std::endl;
+	else
+		std::cout << "impossible" << std::endl;
 	std::cout << std::setprecision(1) << std::fixed;
-	std::cout << "float: ";
-	std::cout << fl << 'f' << std::endl;
+	std::cout << "float: " << fl << 'f' << std::endl;
+	std::cout << "double: " << static_cast<double>(fl) << std::endl;
 }
 
 void printDouble(std::string &input)
 {
 	double dbl = std::stod(input);
-	std::cout << "double: ";
-	std::cout << dbl << std::endl;
+	std::cout << "char: ";
+	if (!std::isfinite(dbl) || dbl >= 128)
+		std::cout << "impossible" << std::endl;
+	else if (dbl < '!' || dbl >= 127)
+		std::cout << "Not displayable" << std::endl;
+	else
+		std::cout << static_cast<char>(dbl) << std::endl;
+	std::cout << "int: ";
+	if (dbl <= INT_MAX_FLOAT && dbl >= INT_MIN_FLOAT && std::isfinite(dbl))
+		std::cout << static_cast<int>(dbl) << std::endl;
+	else
+		std::cout << "impossible" << std::endl;
+	std::cout << std::setprecision(1) << std::fixed;
+	std::cout << "float: " << static_cast<float>(dbl) << 'f' << std::endl;
+	std::cout << "double: " << dbl << std::endl;
+}
+
+bool isEncased(std::string &input, char c)
+{
+	if (input[0] == c && *(--input.end()) == c)
+		return (true);
+	return (false);
+}
+
+bool isInt(std::string &input)
+{
+	(void)input;
+	return (false);
+}
+
+bool checkFinites(std::string &input)
+{
+	std::string nonfinites[3] = {"+inf", "-inf", "nan"};
+	for (int i = 0; i < 3; i++)
+	{
+		if (input.find(nonfinites[i]) != input.npos)
+			return (true);
+	}
+	return (false);
+};
+
+bool isDouble(std::string &input)
+{
+	size_t pos = input.find(".");
+	if (!checkFinites(input))
+	{
+		if (pos == input.npos)
+			return (false);
+		if (input.find(".", pos + 1) != input.npos)
+			return (false);
+	}
+	return (true);
+}
+
+bool isFloat(std::string &input)
+{
+	size_t pos = input.find(".");
+	if (!checkFinites(input))
+	{
+		if (pos == input.npos)
+			return (false);
+		if (input.find(".", pos + 1) != input.npos)
+			return (false);
+	}
+	if (*(--input.end()) != 'f')
+		return (false);
+	return (true);
+	
+}
+
+bool isChar(std::string &input)
+{
+	if (input.size() == 3 && isEncased(input, '\''))
+		return (true);
+	return (false);
 }
 
 Types getType(std::string &input)
 {
-	(void)input;
-	return (Char);
+	if (isChar(input))
+		return (Char);
+	if (isFloat(input))
+		return (Float);
+	if (isDouble(input))
+		return (Double);
+	if (isInt(input))
+		return (Int);
+	return (None);
 }
 
 void ScalarConverter::convert(std::string input) {
