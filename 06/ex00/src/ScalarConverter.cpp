@@ -83,8 +83,16 @@ bool isEncased(std::string &input, char c)
 
 bool isInt(std::string &input)
 {
-	(void)input;
-	return (false);
+	int nb;
+	try
+	{
+		nb = std::stoi(input);
+		return (true);
+	}
+	catch(const std::exception& e)
+	{
+		return (false);
+	}
 }
 
 bool checkFinites(std::string &input)
@@ -92,8 +100,14 @@ bool checkFinites(std::string &input)
 	std::string nonfinites[3] = {"+inf", "-inf", "nan"};
 	for (int i = 0; i < 3; i++)
 	{
-		if (input.find(nonfinites[i]) != input.npos)
-			return (true);
+		size_t ret = input.find(nonfinites[i]);
+		if (ret != input.npos && !ret)
+		{
+			if (i == 2 && ((input[3] == 'f' && input.length() == 4) || input.length() == 3))
+				return (true);
+			else if (i < 2 && ((input[4] == 'f' && input.length() == 5) || input.length() == 4))
+				return (true);
+		}
 	}
 	return (false);
 };
@@ -164,6 +178,7 @@ void ScalarConverter::convert(std::string input) {
 			printDouble(input);
 			break;
 		default:
+			std::cerr << "Invalid input" << std::endl;
 			return;
 	}
 }

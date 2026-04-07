@@ -1,6 +1,6 @@
-NAME = serialize
+NAME = 
 
-SRC_FILES = main.cpp Serializer.cpp
+SRC_FILES = 
 
 SRC_DIR = src
 OBJ_DIR = obj
