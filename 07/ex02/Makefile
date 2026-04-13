@@ -1,6 +1,6 @@
-NAME = base
+NAME = array
 
-SRC_FILES = main.cpp Base.cpp
+SRC_FILES = main.cpp
 
 SRC_DIR = src
 OBJ_DIR = obj
