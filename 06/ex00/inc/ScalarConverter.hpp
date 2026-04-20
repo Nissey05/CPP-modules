@@ -18,5 +18,8 @@ class ScalarConverter
 	private:
 		ScalarConverter() = delete;
 	public:
+		~ScalarConverter();
+		ScalarConverter(const ScalarConverter &cpy);
+		ScalarConverter &operator=(const ScalarConverter &cpy);
 		static void convert(std::string str);
 };

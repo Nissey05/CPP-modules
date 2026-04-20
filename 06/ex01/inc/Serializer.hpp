@@ -8,6 +8,9 @@ class	Serializer
 	private:
 		Serializer() = delete;
 	public:
+		~Serializer();
+		Serializer(const Serializer &cpy);
+		Serializer &operator=(const Serializer &cpy);
 		static uintptr_t  serialize(Data *ptr);
 		static Data* deserialize(uintptr_t raw);
 };

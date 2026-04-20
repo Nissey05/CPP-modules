@@ -4,6 +4,20 @@
 #include <iomanip>
 #include <cmath>
 
+ScalarConverter::~ScalarConverter()
+{}
+
+ScalarConverter::ScalarConverter(const ScalarConverter &cpy)
+{
+	(void)cpy;
+}
+
+ScalarConverter &ScalarConverter::operator=(const ScalarConverter &cpy)
+{
+	(void)cpy;
+	return (*this);
+}
+
 void printChar(std::string &input)
 {
 	char c = input.c_str()[1];
