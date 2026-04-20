@@ -1,6 +1,6 @@
-NAME = span
+NAME = mutantstack
 
-SRC_FILES = main.cpp Span.cpp 
+SRC_FILES = main.cpp 
 
 SRC_DIR = src
 OBJ_DIR = obj
