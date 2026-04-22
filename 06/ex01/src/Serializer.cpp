@@ -8,9 +8,20 @@ Serializer::Serializer(const Serializer &cpy)
 	(void)cpy;
 }
 
-Serializer &Serializer::operator=(const Serializer &cpy)
+Serializer &Serializer::operator=(const Serializer &cpy) noexcept
 {
 	(void)cpy;
+	return (*this);
+}
+
+Serializer::Serializer(Serializer&& other) noexcept
+{
+	(void)other;
+}
+
+Serializer &Serializer::operator=(Serializer&& other) noexcept
+{
+	(void)other;
 	return (*this);
 }
 

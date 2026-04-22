@@ -18,6 +18,17 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &cpy)
 	return (*this);
 }
 
+ScalarConverter::ScalarConverter(ScalarConverter&& other) noexcept
+{
+	(void)other;
+}
+
+ScalarConverter &ScalarConverter::operator=(ScalarConverter&& other) noexcept
+{
+	(void)other;
+	return (*this);
+}
+
 void printChar(std::string &input)
 {
 	char c = input.c_str()[1];

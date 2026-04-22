@@ -18,8 +18,10 @@ class ScalarConverter
 	private:
 		ScalarConverter() = delete;
 	public:
-		~ScalarConverter();
-		ScalarConverter(const ScalarConverter &cpy);
-		ScalarConverter &operator=(const ScalarConverter &cpy);
+		~ScalarConverter() noexcept;
+		ScalarConverter(const ScalarConverter &cpy) noexcept;
+		ScalarConverter &operator=(const ScalarConverter &cpy) noexcept;
+		ScalarConverter(ScalarConverter&& other) noexcept;
+		ScalarConverter& operator=(ScalarConverter&& other) noexcept;
 		static void convert(std::string str);
 };
