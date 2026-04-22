@@ -10,6 +10,8 @@ class MutantStack : public std::stack<T>
 		virtual ~MutantStack();
 		MutantStack(const MutantStack &cpy);
 		MutantStack &operator=(const MutantStack &cpy);
+		MutantStack(const MutantStack &&cpy);
+		MutantStack &operator=(const MutantStack &&cpy);
 
 		typedef typename std::stack<T>::container_type::iterator			iterator;
 		typedef typename std::stack<T>::container_type::const_iterator	const_iterator;

@@ -17,7 +17,10 @@ size_var(n)
 template <typename T>
 Array<T>::~Array()
 {
-	delete[] data;
+	size_var = copy.size();
+	data = new T[size_var];
+	for (size_t i = 0; i < size_var; i++)
+		data[i] = copy.data[i];
 }
 
 template <typename T>
@@ -28,6 +31,30 @@ Array<T>::Array(const Array& copy)
 
 template <typename T>
 Array<T>& Array<T>::operator=(const Array& copy)
+{
+	if (this != &copy)
+	{
+		size_var = copy.size();
+		if (data)
+			delete[] data;
+		data = new T[size_var];
+		for (size_t i = 0; i < size_var; i++)
+			data[i] = copy.data[i];
+	}
+	return (*this);
+}
+
+template <typename T>
+Array<T>::Array(const Array&& copy)
+{
+	size_var = copy.size();
+	data = new T[size_var];
+	for (size_t i = 0; i < size_var; i++)
+		data[i] = copy.data[i];
+}
+
+template <typename T>
+Array<T>& Array<T>::operator=(const Array&& copy)
 {
 	if (this != &copy)
 	{

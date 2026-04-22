@@ -24,6 +24,20 @@ MutantStack<T> &MutantStack<T>::operator=(const MutantStack &cpy)
 }
 
 template <typename T>
+MutantStack<T>::MutantStack(const MutantStack &&cpy)
+: std::stack<T>(cpy)
+{}
+
+template <typename T>
+MutantStack<T> &MutantStack<T>::operator=(const MutantStack &&cpy)
+{
+	if (this != &cpy)
+		std::stack<T>::operator=(cpy);
+	return (*this);
+}
+
+
+template <typename T>
 typename MutantStack<T>::iterator MutantStack<T>::begin()
 {
 	return (this->c.begin());

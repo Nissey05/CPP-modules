@@ -13,6 +13,8 @@ class Span
 		~Span();
 		Span(const Span &cpy);
 		Span &operator=(const Span &cpy);
+		Span(const Span &&old);
+		Span &operator=(const Span &&old);
 
 		void addNumber(int nb);
 		void addRange(int min, int max);

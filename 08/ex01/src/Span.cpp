@@ -3,10 +3,15 @@
 #include <iostream>
 #include <algorithm>
 
-Span::Span() : data(nullptr), size(0), N(0)
+Span::Span() :
+data(nullptr),
+size(0),
+N(0)
 {}
 
-Span::Span(unsigned int N) : size(0), N(N)
+Span::Span(unsigned int N) : 
+size(0),
+N(N)
 {
 	data = new int[N];
 }
@@ -14,9 +19,13 @@ Span::Span(unsigned int N) : size(0), N(N)
 Span::~Span()
 {}
 
-Span::Span(const Span &cpy)
+Span::Span(const Span &cpy) :
+size(cpy.size),
+N(cpy.N)
 {
-	*this = cpy;
+	data = new int[N];
+	for (unsigned int i = 0; i < N; i++)
+		data[i] = cpy.data[i];
 }
 
 Span &Span::operator=(const Span &cpy)
@@ -29,6 +38,23 @@ Span &Span::operator=(const Span &cpy)
 		data = new int[N];
 		for (unsigned int i = 0; i < N; i++)
 			data[i] = cpy.data[i];
+	}
+	return (*this);
+}
+
+Span::Span(const Span &&old) :
+data(old.data),
+size(old.size),
+N(old.N)
+{}
+
+Span &Span::operator=(const Span &&old)
+{
+	if (this != &old)
+	{
+		data = old.data;
+		size = old.size;
+		N = old.N;
 	}
 	return (*this);
 }

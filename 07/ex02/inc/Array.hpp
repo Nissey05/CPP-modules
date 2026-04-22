@@ -11,9 +11,11 @@ class Array
 	public:
 		Array();
 		Array(unsigned int n);
-		Array(const Array &cpy);
 		~Array();
+		Array(const Array &cpy);
 		Array &operator=(const Array &cpy);
+		Array(const Array &&cpy);
+		Array &operator=(const Array &&cpy);
 
 		T &operator[](size_t i) const;
 
