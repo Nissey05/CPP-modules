@@ -3,7 +3,7 @@
 Serializer::~Serializer()
 {}
 
-Serializer::Serializer(const Serializer &cpy)
+Serializer::Serializer(const Serializer &cpy) noexcept
 {
 	(void)cpy;
 }

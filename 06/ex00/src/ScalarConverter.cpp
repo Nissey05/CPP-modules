@@ -4,15 +4,15 @@
 #include <iomanip>
 #include <cmath>
 
-ScalarConverter::~ScalarConverter()
+ScalarConverter::~ScalarConverter() noexcept
 {}
 
-ScalarConverter::ScalarConverter(const ScalarConverter &cpy)
+ScalarConverter::ScalarConverter(const ScalarConverter &cpy) noexcept
 {
 	(void)cpy;
 }
 
-ScalarConverter &ScalarConverter::operator=(const ScalarConverter &cpy)
+ScalarConverter &ScalarConverter::operator=(const ScalarConverter &cpy) noexcept
 {
 	(void)cpy;
 	return (*this);

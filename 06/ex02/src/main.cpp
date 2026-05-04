@@ -83,8 +83,25 @@ int main(void)
 
 	identify(p);
 	delete (p);
+
 	B c;
 	identify(c);
+
 	p = generate();
 	identify(p);
+	identify(*p);
+	delete (p);
+
+	p = generate();
+	identify(p);
+	delete (p);
+	p = generate();
+	identify(p);
+	delete (p);
+	p = generate();
+	identify(p);
+	delete (p);
+	p = generate();
+	identify(p);
+	delete (p);
 }
