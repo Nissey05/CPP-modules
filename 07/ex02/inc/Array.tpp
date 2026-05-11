@@ -2,7 +2,7 @@
 #include <iostream>
 
 template <typename T>
-Array<T>::Array() :
+Array<T>::Array() noexcept :
 data(nullptr),
 size_var(0)
 {}
@@ -11,16 +11,14 @@ template <typename T>
 Array<T>::Array(unsigned int n) :
 size_var(n)
 {
-	data = new T[n];
+	data = new T[n]();
 }
 
 template <typename T>
-Array<T>::~Array()
+Array<T>::~Array() noexcept
 {
-	size_var = copy.size();
-	data = new T[size_var];
-	for (size_t i = 0; i < size_var; i++)
-		data[i] = copy.data[i];
+	if (data)
+		delete[] data;
 }
 
 template <typename T>
@@ -45,25 +43,25 @@ Array<T>& Array<T>::operator=(const Array& copy)
 }
 
 template <typename T>
-Array<T>::Array(const Array&& copy)
+Array<T>::Array(Array&& copy) noexcept
 {
 	size_var = copy.size();
-	data = new T[size_var];
-	for (size_t i = 0; i < size_var; i++)
-		data[i] = copy.data[i];
+	data = copy.data;
+	copy.data = nullptr;
+	copy.size_var = 0;
 }
 
 template <typename T>
-Array<T>& Array<T>::operator=(const Array&& copy)
+Array<T>& Array<T>::operator=(Array&& copy) noexcept
 {
 	if (this != &copy)
 	{
-		size_var = copy.size();
 		if (data)
 			delete[] data;
-		data = new T[size_var];
-		for (size_t i = 0; i < size_var; i++)
-			data[i] = copy.data[i];
+		size_var = copy.size();
+		data = copy.data;
+		copy.data = nullptr;
+		copy.size_var = 0;
 	}
 	return (*this);
 }
@@ -83,7 +81,7 @@ const char *Array<T>::TooHighException::what() const noexcept
 }
 
 template <typename T>
-size_t Array<T>::size() const
+size_t Array<T>::size() const noexcept
 {
 	return (size_var);
 }

@@ -9,17 +9,17 @@ class Array
 		T *data;
 		size_t size_var;
 	public:
-		Array();
+		Array() noexcept;
 		Array(unsigned int n);
-		~Array();
+		~Array() noexcept;
 		Array(const Array &cpy);
 		Array &operator=(const Array &cpy);
-		Array(const Array &&cpy);
-		Array &operator=(const Array &&cpy);
+		Array(Array &&cpy) noexcept;
+		Array &operator=(Array &&cpy) noexcept;
 
 		T &operator[](size_t i) const;
 
-		size_t size() const;
+		size_t size() const noexcept;
 
 		class TooHighException : public std::exception
 		{
