@@ -1,11 +1,11 @@
 #pragma once
 #include <exception>
+#include <vector>
 
 class Span
 {
 	private:
-		int *data;
-		unsigned int size;
+		std::vector<int> data;
 		unsigned int N;
 	public:
 		Span();
