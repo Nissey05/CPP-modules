@@ -1,6 +1,6 @@
-NAME = 
+NAME = RPN
 
-SRC_FILES = 
+SRC_FILES = main.cpp RPN.cpp
 
 SRC_DIR = src
 OBJ_DIR = obj
@@ -9,7 +9,7 @@ OBJ = $(SRC_FILES:.cpp=.o)
 OBJ := $(OBJ:%=$(OBJ_DIR)/%)
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -MMD -std=c++11
+CFLAGS = -Wall -Wextra -Werror -MMD -std=c++11 -static
 INC = -I inc/
 
 all: $(NAME)
