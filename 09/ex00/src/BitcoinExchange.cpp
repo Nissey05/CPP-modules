@@ -20,7 +20,7 @@ std::map <std::string, float> import_csv(std::fstream &fs)
 
 float getRate(const std::string &date, const std::map<std::string, float> data)
 {
-	auto it = data.upper_bound(date);
+	std::map<std::string, float>::const_iterator it = data.upper_bound(date);
 	if (it == data.begin())
 		return (0.0f);
 	--it;
@@ -41,11 +41,11 @@ bool printOccurances(const std::string file, const std::map<std::string, float> 
 		size_t delim = ln.find(" | ");
 		std::string date, value;
 		if (delim == std::string::npos)
-			std::cerr << "Error: bad input 1 => " << ln << std::endl;
+			std::cerr << "Error: bad input => " << ln << std::endl;
 		else if ((date = ln.substr(0, delim)).empty())
-			std::cerr << "Error: bad input 2 => " << ln << std::endl;
+			std::cerr << "Error: bad input => " << ln << std::endl;
 		else if ((value = ln.substr(delim + 3)).empty())
-			std::cerr << "Error: bad input 3 => " << ln << std::endl;
+			std::cerr << "Error: bad input => " << ln << std::endl;
 		else
 		{
 			try
@@ -60,7 +60,7 @@ bool printOccurances(const std::string file, const std::map<std::string, float> 
 			}
 			catch (std::exception &e)
 			{
-				std::cerr << "Error: not a number" << std::endl;
+				std::cerr << "Error: not a number." << std::endl;
 			}
 			
 		}
