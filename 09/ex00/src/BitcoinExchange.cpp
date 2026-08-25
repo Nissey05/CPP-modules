@@ -50,7 +50,6 @@ static bool isValidDate(std::string date)
 		nb = std::stoi(day);
 		if (day.empty() || !(nb > 0 && nb <= getLastDateMonth(std::stoi(year), std::stoi(month))))
 			return (false);
-		
 	}
 	catch(const std::exception& e)
 	{
@@ -59,7 +58,7 @@ static bool isValidDate(std::string date)
 	return (true);
 }
 
-std::map <std::string, float> import_csv(std::fstream &fs)
+std::map <std::string, float>import_csv(std::fstream &fs)
 {
 	std::string str;
 	std::getline(fs, str);
@@ -118,9 +117,7 @@ bool printOccurances(const std::string file, const std::map<std::string, float> 
 			{
 				std::cerr << "Error: not a number." << std::endl;
 			}
-			
 		}
-		
 	}
 	fs.close();
 	return (true);

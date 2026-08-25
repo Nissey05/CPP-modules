@@ -53,16 +53,12 @@ int main(int argc, char **argv)
 				int a = s.top();
 				s.pop();
 				if (!s.empty())
-				{
 					s.top() = do_operator(str, s.top(), a);
-				}
 				else
 					err_and_exit();
 			}
 			else if (is_number(str))
-			{
 				s.push(std::stoi(str));
-			}
 			else
 				err_and_exit();
 		}
