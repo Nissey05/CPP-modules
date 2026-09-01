@@ -52,7 +52,7 @@ int main(int argc, char **argv)
 					err_and_exit();
 				int a = s.top();
 				s.pop();
-				if (!s.empty())
+				if (!s.empty() && ((a && str == "/") || str != "/"))
 					s.top() = do_operator(str, s.top(), a);
 				else
 					err_and_exit();
