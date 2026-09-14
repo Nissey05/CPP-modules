@@ -44,8 +44,5 @@ int main(int argc, char **argv)
 		return (1);
 	}
 	
-	for (auto i : v)
-	{
-		std::cout << i << std::endl;
-	}
+	sortVec(v);
 }
