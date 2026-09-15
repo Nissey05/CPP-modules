@@ -1,6 +1,6 @@
 NAME = PmergeMe
 
-SRC_FILES = main.cpp PmergeMe.cpp
+SRC_FILES = main.cpp PmergeMe.cpp PdequeMe.cpp
 
 SRC_DIR = src
 OBJ_DIR = obj
