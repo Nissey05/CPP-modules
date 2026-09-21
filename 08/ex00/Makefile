@@ -1,6 +1,6 @@
 NAME = easyfind
 
-SRC_FILES = NotFoundException.cpp main.cpp
+SRC_FILES = main.cpp
 
 SRC_DIR = src
 OBJ_DIR = obj
@@ -9,12 +9,12 @@ OBJ = $(SRC_FILES:.cpp=.o)
 OBJ := $(OBJ:%=$(OBJ_DIR)/%)
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -MMD -std=c++11
+CFLAGS = -Wall -Wextra -Werror -MMD -std=c++11 -static
 INC = -I inc/
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) | Makefile
 	$(CC) $(OBJ) $(CFLAGS) $(INC) -o $(NAME)
 
 $(OBJ_DIR):

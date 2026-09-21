@@ -1,6 +1,6 @@
 #pragma once
 
 template <typename T>
-void easyfind(T &c, int b);
+typename T::iterator easyfind(T &c, int b);
 
 #include "easyfind.tpp"
