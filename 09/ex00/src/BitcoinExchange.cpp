@@ -66,7 +66,7 @@ std::map <std::string, float>import_csv(std::fstream &fs)
 	while (std::getline(fs, str))
 	{
 		size_t delim = str.find(',');
-		if (delim == str.npos) // throw exception?
+		if (delim == str.npos)
 			return (data);
 		data[str.substr(0, delim)] = std::stof(str.substr(delim + 1));
 	}

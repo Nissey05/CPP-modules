@@ -51,7 +51,7 @@ void Span::addNumber(int nb)
 {
 	if (data.size() >= N)
 		throw FullSpanException();
-	data[data.size()] = nb;
+	data.push_back(nb);
 }
 
 void Span::addRange(int min, int max)
@@ -66,11 +66,12 @@ unsigned int Span::shortestSpan() const
 {
 	if (data.size() <= 1)
 		throw NoSpanException();
+	std::vector<int> cpy = data;
 	unsigned int shortest = UINT_MAX;
-	std::sort(data.begin(), data.end());
-	for (unsigned int i = 0; i + 1 < data.size(); i++)
+	std::sort(cpy.begin(), cpy.end());
+	for (unsigned int i = 0; i + 1 < cpy.size(); i++)
 	{
-		unsigned int span = data[i + 1] - data[i];
+		unsigned int span = cpy[i + 1] - cpy[i];
 		if (span < shortest)
 			shortest = span;
 	}
@@ -82,7 +83,7 @@ unsigned int Span::longestSpan() const
 	if (data.size() <= 1)
 		throw NoSpanException();
 	auto [min, max] = std::minmax_element(data.begin(), data.end());
-	return (*min - *max);
+	return (*max - *min);
 }
 
 const char *Span::NoSpanException::what() const noexcept
