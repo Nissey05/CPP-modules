@@ -21,7 +21,6 @@ static int getLastDateMonth(const int year, const int month)
 		return (30);
 	if (month == 2)
 	{
-		std::cout << "month" << std::endl;
 		if (isGapYear(year))
 			return (29);
 		else
@@ -30,25 +29,42 @@ static int getLastDateMonth(const int year, const int month)
 	return (31);
 }
 
+static bool checkNoNum(std::string str)
+{
+	for (size_t i = 0; i < str.size(); i++)
+	{
+		if ((char)str[i] < '0' || (char)str[i] > '9')
+			return (false);
+	}
+	return (true);
+}
+
 static bool isValidDate(std::string date)
 {
 	std::string year, month, day;
 	size_t delim_1 = date.find('-');
 	size_t delim_2 = date.find('-', delim_1 + 1);
+	if (delim_1 == std::string::npos || delim_2 == std::string::npos)
+		return (false);
 	int nb = 0;
+	
 	try
 	{
 		year = date.substr(0, delim_1);
-		nb = std::stoi(year);
-		if (year.empty())
+		if (year.empty() ||!checkNoNum(year))
 			return (false);
-		month = date.substr(delim_1 + 1, date.size() - delim_2);
+		nb = std::stoi(year);
+		month = date.substr(delim_1 + 1, delim_2 - delim_1 - 1);
+		if (month.empty() || !checkNoNum(month))
+			return (false);
 		nb = std::stoi(month);
-		if (month.empty() || !(nb > 0 && nb < 13))
+		if (!(nb > 0 && nb < 13))
 			return (false);
 		day = date.substr(delim_2 + 1);
+		if (day.empty() || !checkNoNum(day))
+			return (false);
 		nb = std::stoi(day);
-		if (day.empty() || !(nb > 0 && nb <= getLastDateMonth(std::stoi(year), std::stoi(month))))
+		if (!(nb > 0 && nb <= getLastDateMonth(std::stoi(year), std::stoi(month))))
 			return (false);
 	}
 	catch(const std::exception& e)
@@ -82,6 +98,24 @@ float getRate(const std::string &date, const std::map<std::string, float> data)
 	return (it->second);
 }
 
+static bool checkNoFloat(std::string str)
+{
+	size_t end = str.find('.');
+	if (end == std::string::npos)
+		return (checkNoNum(str));
+	for (size_t i = 0; i < end; i++)
+	{
+		if ((char)str[i] < '0' || (char)str[i] > '9')
+			return (false);
+	}
+		for (size_t i = end + 1; i < str.size(); i++)
+	{
+		if ((char)str[i] < '0' || (char)str[i] > '9')
+			return (false);
+	}
+	return (true);
+}
+
 bool printOccurances(const std::string file, const std::map<std::string, float> data)
 {
 	std::fstream fs(file, std::ios::in);
@@ -91,6 +125,13 @@ bool printOccurances(const std::string file, const std::map<std::string, float> 
 		return (false);
 	}
 	std::string ln;
+	std::getline(fs, ln);
+	if (ln != "date | value")
+	{
+		std::cerr << "Error: bad input => " << ln << std::endl;
+		fs.close();
+		return (false);
+	}
 	while (std::getline(fs, ln))
 	{
 		size_t delim = ln.find(" | ");
@@ -105,6 +146,11 @@ bool printOccurances(const std::string file, const std::map<std::string, float> 
 		{
 			try
 			{
+				if (!checkNoFloat(value))
+				{
+					std::cerr << "Error: bad input => " << ln << std::endl;
+					continue;
+				}
 				float fl = std::stof(value);
 				if (fl < 0)
 					std::cerr << "Error: not a positive number." << std::endl;

@@ -59,16 +59,32 @@ int main(int argc, char **argv)
 		return (1);
 	}
 	std::cout << "-- input: --" << std::endl;
+	int i = 0;
 	for (auto a : v)
+	{
+		if (i++ >= 4)
+		{
+			std::cout << "[...]";
+			break ;
+		}
 		std::cout << a << " ";
+	}
 	std::cout << std::endl;
 	std::chrono::steady_clock::time_point start = std::chrono::steady_clock::now();
 	sortVec(v);
 	std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
 	double us = std::chrono::duration<double, std::micro>(end - start).count();
 	std::cout << "-- output: --" << std::endl;
+	i = 0;
 	for (auto a : v)
+	{
+		if (i++ >= 4)
+		{
+			std::cout << "[...]";
+			break ;
+		}
 		std::cout << a << " ";
+	}
 	std::cout << std::endl;
 	std::cout << "Time to process a range of " << v.size() << " elements with std::vector : " << us << " us" << std::endl;
 	isSorted(v);
@@ -76,9 +92,6 @@ int main(int argc, char **argv)
 	sortDeque(d);
 	end = std::chrono::steady_clock::now();
 	us = std::chrono::duration<double, std::micro>(end - start).count();
-	std::cout << "-- output: --" << std::endl;
-	for (auto a : d)
-		std::cout << a << " ";
 	std::cout << std::endl;
 	std::cout << "Time to process a range of " << d.size() << " elements with std::deque : " << us << " us" << std::endl;
 	isSorted(d);
